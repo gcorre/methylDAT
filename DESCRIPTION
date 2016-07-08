@@ -1,0 +1,23 @@
+Package: methylDAT
+Type: Package
+Title: Analysis of illumina 450K methylation array with a Double Average Criteria
+Version: 0.1.0
+Authors@R: c(
+    person("Guillaume", "Corre", email = "gcorre@genethon.fr", role = c("cre","aut")),
+    person("Daniel", "Stockholm", email = "stockh@genethon.fr", role = c("aut")))
+Maintainer: <gcorre@genethon.fr>
+Description: This package performs differencial methylation analysis between two conditions using a Double Average method. A rolling average is first applied to beta values sorted by chromosom position and CpG are classified as changed or unchanged according if all beta values from each condition are below or above the global CpG betavalue average.
+License: GPL-2.0
+LazyData: TRUE
+Depends:
+    R(>= 2.10), IlluminaHumanMethylation450kanno.ilmn12.hg19
+Imports:
+    dplyr ,
+    magrittr,
+    caTools,
+    minfi,
+    doParallel,
+    Hmisc,
+    foreach,
+    parallel
+RoxygenNote: 5.0.1
