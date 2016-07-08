@@ -74,7 +74,7 @@ DAT <- function(betaValues, expDat, window.width=3, threads = 1){
   if(parallel::detectCores()==1){
     th <- 1
   } else {
-      th <- min(parallel::detectCores(),threads)
+      th <- min(parallel::detectCores()-1,threads)
   }
 
   grpsp <- split(1:nrow(betas_AVG), ceiling(seq_along(1:nrow(betas_AVG))/(nrow(betaValues)/th)))
